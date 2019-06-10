@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="AplicacaoFranquias">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+
+        <script src="../semantic/dist/semantic.min.js"></script>
+
+        <meta charset="utf-8">
+        <title> AplicacaoFranquias </title>
+
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+        <!-- Aplicacao -->
+        <script src="public/appRoutes.js"></script>
+        <script src="public/app.js"></script>
+
+        <!--  Controllers -->
+        <script src="public/components/franquia/franquia.control.js"></script>
+
+        <!--  Services -->
+        <script src="public/components/services/franquia.service.js"></script>
+        <script src="public/components/services/loja.service.js"></script>
+        <script src="public/components/services/empregado.service.js"></script>
+
+    </head>
+    <body>
+        
+        <div class="ui visible left demo vertical inverted thin sidebar labeled icon menu">
+                <div class="ui small image">
+                    <img src="http://franquear.com.br/wp-content/uploads/2016/03/logo4-franquear-site-franquia-franchising-negocios-gestao-resultado.png">
+                </div>
+                <div class="hidden item"></div>
+                <a class="item">
+                  <i class="home icon"></i>
+                  Home
+                </a>
+                <a class="item">
+                  <i class="block layout icon"></i>
+                  Lista
+                </a>
+                <a class="item">
+                  <i class="paperclip icon"></i>
+                  Cadastrar
+                </a>
+                <div class="pusher">
+                        <!-- Site content !-->
+                </div>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui grid">
+            <div class="four wide column">
+
+            </div>
+            <ui-view class="eight wide column"></ui-view>
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,79 @@
+
+<div ng-controller="FranquiaController">
+   <div class=""> 
+        <h4 class="ui horizontal divider header">
+            <i class="tag icon"></i>
+            Franquias
+        </h4>
+    </div>
+    <table class="ui selectable celled table">
+        <thead >
+            <tr class="active">
+                <th>Nome</th>
+                <th>descricao</th>
+                <th>slogan</th>
+                <th>data de fundacao</th>
+                <th>site</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="franquia in franquias">
+            <tr>
+                <td data-label="Nome">{{ franquia.nome }}</td>
+                <td data-label="descricao">{{ franquia.descricao }}</td>
+                <td data-label="slogan">{{ franquia.slogan }}</td>
+                <td data-label="data de fundacao">{{ franquia.data_fundacao }}</td>
+                <td data-label="site">{{ franquia.site }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 class="ui horizontal divider header">
+            <i class="tag icon"></i>
+            Lojas
+    </h4>
+
+    <table class="ui selectable celled table">
+            <thead class="active">
+            <tr><th>Franquia</th>
+            <th>Numero</th>
+            <th>Endereco</th>
+            <th>Data de inalguracao</th>
+            <th>Horario de abertura</th>
+            <th>Horario de fechamento</th>
+            </tr></thead>
+            <tbody ng-repeat="loja in lojas">
+                <tr>
+                    <td data-label="Name">{{ loja.franquia_id }}</td>
+                    <td data-label="Numero">{{ loja.numero }}</td>
+                    <td data-label="Endereco">{{ loja.endereco }}</td>
+                    <td data-label="Data de inalguracao">{{ loja.data_abertura }}</td>
+                    <td data-label="Horario de abertura">{{ loja.horario_comercial_inicio }}</td>
+                    <td data-label="Horario de fechamento">{{ loja.horario_comercial_fim }}</td>
+                </tr>
+            </tbody>
+    </table>
+    
+    <h4 class="ui horizontal divider header">
+            <i class="tag icon"></i>
+            Empregados
+    </h4>
+
+    <table class="ui selectable celled table">
+            <thead class="active">
+            <tr><th>Loja</th>
+            <th>Numero</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de contrato</th>
+            </tr></thead>
+            <tbody ng-repeat="empregado in empregados">
+                <tr>
+                    <td data-label="Loja">{{ empregado.loja_id }}</td>
+                    <td data-label="Numero">{{ empregado.numero_telefone }}</td>
+                    <td data-label="Nome">{{ empregado.nome }}</td>
+                    <td data-label="Sobrenome">{{ empregado.sobrenome }}</td>
+                    <td data-label="Data de contrato">{{ empregado.data_contrato }}</td>
+                </tr>
+            </tbody>
+    </table>
+</div>
