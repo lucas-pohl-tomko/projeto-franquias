@@ -4,15 +4,21 @@ angular
 
     $stateProvider
         .state({
-            name: 'franquia',
+            name: 'home',
             url: '/',
-            templateUrl: 'public/components/templates/franquia.html',
+            templateUrl: 'public/components/templates/home.html',
 
         })
         .state({
-            name: 'bla',
-            url: '/opa',
-            templateUrl: 'public/components/templates/bla.html',
+            name: 'lista',
+            url: '/lista',
+            templateUrl: 'public/components/templates/lista.html',
+
+        })
+        .state({
+            name: 'cademp',
+            url: '/cademp',
+            templateUrl: 'public/components/templates/cademp.html',
 
         });
 

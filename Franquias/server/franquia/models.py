@@ -37,3 +37,7 @@ class Empregado(models.Model):
     nome = models.CharField(max_length=100)
     sobrenome = models.CharField(max_length=100)
     data_contrato = models.DateTimeField(default=timezone.now)
+
+class Usuario(models.Model):
+    nome = models.CharField(max_length=100)
+    senha = models.CharField(max_length=100)

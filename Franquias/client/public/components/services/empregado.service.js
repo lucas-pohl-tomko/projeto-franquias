@@ -11,7 +11,8 @@ franquia
                         'Content-Type':'application/json'
                     }
                 }
-            },
+            },    
+
             {
                 stripTrailingSlashes: false
             }

@@ -1,15 +1,18 @@
 from rest_framework import serializers
-from franquia.models import Franquia, Loja, Empregado
+from django import forms
+from franquia.models import Franquia, Loja, Empregado, Usuario
+from django.contrib.auth.hashers import make_password
+
 
 class FranquiaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Franquia
-        fields = ("nome", "descricao", "slogan", "data_fundacao", "site")
+        fields = ("id","nome", "descricao", "slogan", "data_fundacao", "site")
 
 class LojaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Loja
-        fields = (
+        fields = ("id",
             "franquia_id", "numero", "endereco", "data_abertura",
             "horario_comercial_inicio", "horario_comercial_fim"
         )
@@ -17,5 +20,17 @@ class LojaSerializer(serializers.ModelSerializer):
 class EmpregadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empregado
-        fields = ("loja_id", "numero_telefone", "nome", "sobrenome", "data_contrato")
+        fields = ("id","loja_id", "numero_telefone", "nome", "sobrenome", "data_contrato")
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        filds = ("id","nome","senha")
+        
+    def create(self, validated_data):
+        user = Usuario.objects.create(
+            nome=validated_data['nome'],
+            senha = make_password(validated_data['senha'])
+        )
+        user.save()
+        return user

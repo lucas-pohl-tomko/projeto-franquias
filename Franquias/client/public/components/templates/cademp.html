@@ -1,0 +1,28 @@
+
+      <form action="http://127.0.0.1:8000/empregados/" method="POST" class="ui form" enctype="multipart/form-data">
+        
+        <div class="field">
+            <label>Loja</label>
+            <input ng-model="loja_id" type="number" name="loja_id" value="1">
+        </div>
+        <div class="field">
+          <label>First Name</label>
+          <input ng-model="nome" type="text" name="nome" placeholder="First Name">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input ng-model="sobrenome" type="text" name="sobrenome" placeholder="Last Name">
+        </div>
+        <div class="field">
+            <label>telefone</label>
+            <input ng-model="numero_telefone" type="text" name="numero_telefone" placeholder="telefone">
+        </div>
+        <div class="field">
+                <label>contrato</label>
+                <input ng-model="data_contrato" type="datetime-local" name="data_contrato" placeholder="contrato">
+            </div>
+
+            <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+  
