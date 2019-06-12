@@ -6,5 +6,6 @@ angular
     .module('AplicacaoFranquias', [
         'appRoutes',
         'franquia',
-        'ngResource'
+        'ngResource',
+        'ngRoute'
     ]);

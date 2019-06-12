@@ -1,27 +1,53 @@
 angular
-    .module('appRoutes', ["ui.router"])
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .module('appRoutes', ["ngRoute"])
+    .config(function($routeProvider) {
 
-    $stateProvider
-        .state({
-            name: 'home',
-            url: '/',
+    $routeProvider
+        .when('/',{
+            resolve: {
+                "check": function($location, $rootScope){
+
+                        $rootScope.loggedIn = false;
+
+                },
+            },
+
+            templateUrl: 'public/components/templates/login.html',
+
+        })
+        .when('/home',{
+
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
+            },
+
             templateUrl: 'public/components/templates/home.html',
 
         })
-        .state({
-            name: 'lista',
-            url: '/lista',
+        .when('/lista',{
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
+
+            },
             templateUrl: 'public/components/templates/lista.html',
-
         })
-        .state({
-            name: 'cademp',
-            url: '/cademp',
+        .when('/cademp',{
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
             templateUrl: 'public/components/templates/cademp.html',
-
+            }
         });
 
-
-    $urlRouterProvider.otherwise('/');
-}]);
+});

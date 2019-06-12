@@ -12,6 +12,37 @@ franquia
 
     })
 
+    .controller('LoginController', function($scope,$location, Usuario,$rootScope) {
+        Usuario.query().$promise.then(function(data) {
+            $scope.usuarios = data;
+            
+            $scope.submit = function(){
+                var unome = $scope.nomeusuario;
+                var usenha = $scope.senhausuario;
+                
+                data.forEach(function(x){
+                    if($scope.nomeusuario == x.nome){
+                        $rootScope.loggedIn = true;
+                        $location.path('/home')
+                    }
+                })
+                
+
+            }
+        }
+    )}
+    )
+    
+                    
+
+                // });
+                // var x;
+                // for (x in data) {
+                //     if($scope.nomeusuario == x.nome){
+                //         $location.path('/home');
+                //     }
+                // }
+
     // .controller('CadEmpregadoController', function ($scope, $http) {
 
     //     $scope.loja_id = null;
@@ -70,6 +101,3 @@ franquia
     //     });
     // }
 
-    .controller('BlaController', ['$scope', function($scope) {
-        $scope.message = "Funciona pora ikkkkkkkkk";
-    }]);

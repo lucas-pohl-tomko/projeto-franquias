@@ -1,7 +1,7 @@
 franquia
-    .factory('Empregado', function($resource) {
+    .factory('Usuario', function($resource) {
         return $resource(
-            'http://localhost:8000/empregados/:id/',
+            'http://localhost:8000/usuarios/:id/',
             {},
             {
                 'query': {
@@ -10,11 +10,8 @@ franquia
                     headers: {
                         'Content-Type':'application/json'
                     },
-                    
                 },
-
-            },   
-
+            },
             {
                 stripTrailingSlashes: false
             }
