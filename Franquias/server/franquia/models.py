@@ -41,3 +41,4 @@ class Empregado(models.Model):
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
     senha = models.CharField(max_length=100)
+    admin = models.CharField(max_length=1,default=0)

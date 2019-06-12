@@ -25,12 +25,13 @@ class EmpregadoSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        filds = ("id","nome","senha")
+        filds = ("id","nome","senha","admin")
         
-    def create(self, validated_data):
-        user = Usuario.objects.create(
-            nome=validated_data['nome'],
-            senha = make_password(validated_data['senha'])
-        )
-        user.save()
-        return user
+    # def create(self, validated_data):
+    #     user = Usuario.objects.create(
+    #         nome=validated_data['nome'],
+    #         admin=validated_data['admin'],
+    #         senha = make_password(validated_data['senha'])
+    #     )
+    #     user.save()
+    #     return user
