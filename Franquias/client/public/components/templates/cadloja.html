@@ -1,0 +1,30 @@
+
+      <form action="http://127.0.0.1:8000/lojas/" method="POST" class="ui form" enctype="multipart/form-data">
+        
+        <div class="field">
+            <label>Franquia</label>
+            <input ng-model="franquia_id" type="number" name="franquia_id">
+        </div>
+        <div class="field">
+          <label>numero</label>
+          <input ng-model="numero" type="text" name="numero" placeholder="numero">
+        </div>
+        <div class="field">
+          <label>endereco</label>
+          <input ng-model="endereco" type="text" name="endereco" placeholder="endereco">
+        </div>
+        <div class="field">
+                <label>Data de Abertura</label>
+                <input ng-model="data_abertura" type="datetime-local" name="data_abertura" placeholder="data abertura">
+        </div>
+        <div class="field">
+            <label>horario comeriar, inicio</label>
+            <input ng-model="horario_comercial_inicio" type="text" name="horario_comercial_inicio" placeholder="horario_comercial_inicio">
+        </div>
+        <div class="field">
+                <label>horario comeriar, fim</label>
+                <input ng-model="horario_comercial_fim" type="text" name="horario_comercial_fim" placeholder="horario_comercial_fim">
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+    </form>
+  

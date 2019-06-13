@@ -23,7 +23,12 @@ franquia
                 data.forEach(function(x){
                     if($scope.nomeusuario == x.nome){
                         $rootScope.loggedIn = true;
-                        $location.path('/home')
+                        if(x.admin == 1){
+                            $rootScope.admin = true;
+                            $location.path('/home')
+                        }else{
+                            $location.path('/home')
+                        }
                     }
                 })
                 

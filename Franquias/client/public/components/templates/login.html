@@ -1,15 +1,16 @@
-<div class="content" ng-controller="LoginController">
+
+<div class="ui content" ng-controller="LoginController">
     <form action="/"  class="ui form" enctype="multipart/form-data">
         
         <div class="field">
         <label>Nome</label>
-        <input ng-model="nomeusuario" id="nomeusuario" type="text" placeholder="First Name">
+        <input ng-model="nomeusuario" id="nomeusuario" type="text" placeholder="Nome de Usuario">
         </div>
         <div class="field">
-        <label>Last Name</label>
-        <input ng-model="senhausuario" id="senhausuario" type="text" placeholder="Last Name">
+        <label>Senha</label>
+        <input ng-model="senhausuario" id="senhausuario" type="password" placeholder="Senha">
         </div>
     
-            <button class="ui button" type="button" ng-click="submit()">Submit</button>
+        <button class="ui button" type="button" ng-click="submit()">Submit</button>
     </form> 
 </div>

@@ -21,6 +21,7 @@
         <!-- Aplicacao -->
         <script src="public/appRoutes.js"></script>
         <script src="public/app.js"></script>
+        
 
         <!--  Controllers -->
         
@@ -34,7 +35,26 @@
 
     </head>
     <body>
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary pointing menu">
+                <div class="hidden item"></div>
+                <div class="hidden item"></div>
+                <div class="hidden item"></div>
+                <div class="hidden item"></div>
+                <div class="hidden item"></div>
         
+                <a href="#!/cadfranq" ng-controller="LoginController" ng-show="admin" class="item">
+                    Cadastrar Franquia
+                </a>
+                <a href="#!/cadloja" ng-controller="LoginController" ng-show="admin" class="item">
+                    Cadastrar Loja
+                </a>
+                <a href="#!/cademp" ng-controller="LoginController" ng-show="admin" class="item">
+                    Cadastrar empregado
+                </a>
+            </div>
+        </div>
+
         <div class="ui visible left demo vertical inverted thin sidebar labeled icon menu">
             <div class="ui small image">
                 <img src="http://franquear.com.br/wp-content/uploads/2016/03/logo4-franquear-site-franquia-franchising-negocios-gestao-resultado.png">
@@ -48,15 +68,18 @@
               <i class="block layout icon"></i>
               Lista
             </a>
-            <a href="#!/lista" class="item">
-              <i class="paperclip icon"></i>
-              Cadastrar
-            </a>
+            <a href="#!/" ng-show="loggedIn" class="item">
+                <i class="sign out alternate icon"></i>
+                Logout
+              </a>
         </div>
+        
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
         <div class="ui grid">
-            <div class="four wide column"></div>
+            <div class="four wide column">
+                
+            </div>
             <ng-view class="eight wide column"></ng-view>
         </div> 
     </body>

@@ -8,6 +8,7 @@ angular
                 "check": function($location, $rootScope){
 
                         $rootScope.loggedIn = false;
+                        $rootScope.admin = false;
 
                 },
             },
@@ -46,8 +47,30 @@ angular
                         $location.path('/');
                     }
                 },
+            },
             templateUrl: 'public/components/templates/cademp.html',
-            }
+        })
+        .when('/cadloja',{
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
+            },
+            templateUrl: 'public/components/templates/cadloja.html',
+            
+        })
+        .when('/cadfranq',{
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
+            },
+            templateUrl: 'public/components/templates/cadfranq.html',
+            
         });
 
 });
