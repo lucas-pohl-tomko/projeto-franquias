@@ -71,6 +71,17 @@ angular
             },
             templateUrl: 'public/components/templates/cadfranq.html',
             
+        })
+        .when('/caduser',{
+            resolve: {
+                "check": function($location, $rootScope){
+                    if(!$rootScope.loggedIn){
+                        $location.path('/');
+                    }
+                },
+            },
+            templateUrl: 'public/components/templates/caduser.html',
+            
         });
 
 });

@@ -21,7 +21,7 @@ franquia
                 var usenha = $scope.senhausuario;
                 
                 data.forEach(function(x){
-                    if($scope.nomeusuario == x.nome){
+                    if($scope.nomeusuario == x.nome && $scope.senhausuario == x.senha){
                         $rootScope.loggedIn = true;
                         if(x.admin == 1){
                             $rootScope.admin = true;
