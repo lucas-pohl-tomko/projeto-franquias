@@ -1,0 +1,15 @@
+Para instalar o projeto, rode:
+
+npm install
+
+e em seguida:
+
+npm install -g bower
+
+e depois:
+
+bower install --config.interactive=false --allow-root
+
+pronto! agora rode o cliente:  
+
+node server.js
