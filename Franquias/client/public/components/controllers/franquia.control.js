@@ -17,14 +17,14 @@ franquia
             $scope.usuarios = data;
             
             $scope.submit = function(){
-                var unome = $scope.nomeusuario;
-                var usenha = $scope.senhausuario;
-                
                 data.forEach(function(x){
                     if($scope.nomeusuario == x.nome && $scope.senhausuario == x.senha){
-                        $rootScope.loggedIn = true;
+                        sessionStorage.setItem("loggedIn", true);
+                        $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
                         if(x.admin == 1){
-                            $rootScope.admin = true;
+                            sessionStorage.setItem("admin", true);
+                            $rootScope.admin = sessionStorage.getItem("admin");
+
                             $location.path('/home')
                         }else{
                             $location.path('/home')

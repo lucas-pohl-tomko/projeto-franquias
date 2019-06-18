@@ -1,0 +1,28 @@
+<div ng-controller="FranquiaController">
+        <h4 class="ui horizontal divider header">
+                <i class="tag icon"></i>
+                Empregados
+        </h4>
+    
+        <table class="ui selectable celled table">
+                <thead class="active">
+                <tr>
+                <th>Id</th>
+                <th>Loja</th>
+                <th>Numero</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Data de contrato</th>
+                </tr></thead>
+                <tbody ng-repeat="empregado in empregados">
+                    <tr>
+                        <td data-label="Loja">{{ empregado.id }}</td>
+                        <td data-label="Loja">{{ empregado.loja_id }}</td>
+                        <td data-label="Numero">{{ empregado.numero_telefone }}</td>
+                        <td data-label="Nome">{{ empregado.nome }}</td>
+                        <td data-label="Sobrenome">{{ empregado.sobrenome }}</td>
+                        <td data-label="Data de contrato">{{ empregado.data_contrato }}</td>
+                    </tr>
+                </tbody>
+        </table>
+</div>

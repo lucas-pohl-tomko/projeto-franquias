@@ -1,0 +1,30 @@
+<div ng-controller="FranquiaController">
+        <div class=""> 
+             <h4 class="ui horizontal divider header">
+                 <i class="tag icon"></i>
+                 Franquias
+             </h4>
+         </div>
+         <table class="ui selectable celled table">
+             <thead >
+                 <tr class="active">
+                     <th>Id</th>
+                     <th>Nome</th>
+                     <th>descricao</th>
+                     <th>slogan</th>
+                     <th>data de fundacao</th>
+                     <th>site</th>
+                 </tr>
+             </thead>
+             <tbody ng-repeat="franquia in franquias">
+                 <tr>
+                     <td data-label="Nome">{{ franquia.id }}</td>
+                     <td data-label="Nome">{{ franquia.nome }}</td>
+                     <td data-label="descricao">{{ franquia.descricao }}</td>
+                     <td data-label="slogan">{{ franquia.slogan }}</td>
+                     <td data-label="data de fundacao">{{ franquia.data_fundacao }}</td>
+                     <td data-label="site">{{ franquia.site }}</td>
+                 </tr>
+             </tbody>
+         </table>
+</div>     

@@ -6,9 +6,9 @@ angular
         .when('/',{
             resolve: {
                 "check": function($location, $rootScope){
-
-                        $rootScope.loggedIn = false;
                         $rootScope.admin = false;
+                        $rootScope.loggedIn = false;
+                        sessionStorage.clear();
 
                 },
             },
@@ -20,6 +20,9 @@ angular
 
             resolve: {
                 "check": function($location, $rootScope){
+                    $rootScope.admin = sessionStorage.getItem("admin");
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
@@ -31,7 +34,11 @@ angular
         })
         .when('/lista',{
             resolve: {
+                
                 "check": function($location, $rootScope){
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+                    $rootScope.admin = sessionStorage.getItem("admin");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
@@ -43,6 +50,9 @@ angular
         .when('/cademp',{
             resolve: {
                 "check": function($location, $rootScope){
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+                    $rootScope.admin = sessionStorage.getItem("admin");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
@@ -53,6 +63,9 @@ angular
         .when('/cadloja',{
             resolve: {
                 "check": function($location, $rootScope){
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+                    $rootScope.admin = sessionStorage.getItem("admin");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
@@ -64,6 +77,9 @@ angular
         .when('/cadfranq',{
             resolve: {
                 "check": function($location, $rootScope){
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+                    $rootScope.admin = sessionStorage.getItem("admin");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
@@ -73,8 +89,12 @@ angular
             
         })
         .when('/caduser',{
+
             resolve: {
                 "check": function($location, $rootScope){
+                    $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
+                    $rootScope.admin = sessionStorage.getItem("admin");
+
                     if(!$rootScope.loggedIn){
                         $location.path('/');
                     }
