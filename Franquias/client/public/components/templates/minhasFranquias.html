@@ -1,0 +1,25 @@
+
+<div ng-controller="Franquia_UsuariosController">
+    <div class=""> 
+         <h4 class="ui horizontal divider header">
+             <i class="tag icon"></i>
+             Franquias
+         </h4>
+     </div>
+     <table class="ui selectable celled table">
+         <thead >
+             <tr class="active">
+                 <th>Id</th>
+             </tr>
+         </thead>
+          <tbody>
+
+                <tr ng-repeat="franquia_user in franquias_usuarios" ng-if="franquia_user.usuario_id == userId">
+
+                    <td ng-repeat="franquia in franquias" ng-if="franquia.id == franquia_user.franquia_id ">{{ franquia.nome }}</td>
+
+                </tr>
+                
+         </tbody>
+     </table>
+</div>     

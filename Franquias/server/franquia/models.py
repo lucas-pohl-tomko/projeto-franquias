@@ -39,6 +39,11 @@ class Empregado(models.Model):
     data_contrato = models.DateTimeField(default=timezone.now)
 
 class Usuario(models.Model):
+    franquia_id = models.ForeignKey(Franquia)
     nome = models.CharField(max_length=100)
     senha = models.CharField(max_length=100)
     admin = models.CharField(max_length=1,default=0)
+
+class Assoc_Usuarios_Franquias(models.Model):
+    franquia_id = models.ForeignKey(Franquia)
+    usuario_id = models.ForeignKey(Usuario)

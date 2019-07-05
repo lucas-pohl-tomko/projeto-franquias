@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from franquia.models import Franquia, Loja, Empregado, Usuario
-from franquia.serializers import FranquiaSerializer, LojaSerializer,EmpregadoSerializer, UserSerializer
+from franquia.models import *
+from franquia.serializers import *
 
 class FranquiaViewSet(viewsets.ModelViewSet):
     queryset = Franquia.objects.all()
@@ -19,3 +19,7 @@ class EmpregadoViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UserSerializer
+
+class User_FranqViewSet(viewsets.ModelViewSet):
+    queryset = Assoc_Usuarios_Franquias.objects.all()
+    serializer_class = User_FranqSerializer

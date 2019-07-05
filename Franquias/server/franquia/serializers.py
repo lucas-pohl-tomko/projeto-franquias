@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django import forms
-from franquia.models import Franquia, Loja, Empregado, Usuario
+from franquia.models import *
 from django.contrib.auth.hashers import make_password
 
 
@@ -25,7 +25,7 @@ class EmpregadoSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        filds = ("id","nome","senha","admin")
+        filds = ("id","franquia_id","nome","senha","admin")
         
     # def create(self, validated_data):
     #     user = Usuario.objects.create(
@@ -35,3 +35,8 @@ class UserSerializer(serializers.ModelSerializer):
     #     )
     #     user.save()
     #     return user
+
+class User_FranqSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Assoc_Usuarios_Franquias
+        filds = ("id","franquia_id","usuario_id")

@@ -1,5 +1,5 @@
 franquia
-    .controller('FranquiaController', function($scope, Franquia, Loja, Empregado) {
+    .controller('FranquiaController', function($scope, Franquia, Loja, Empregado,Franquias_Usuarios,$rootScope) {
         Franquia.query().$promise.then(function(data) {
             $scope.franquias = data;
         });
@@ -8,18 +8,23 @@ franquia
         });
         Empregado.query().$promise.then(function(data) {
             $scope.empregados = data;
-        })
+        });
 
+        Franquias_Usuarios.query().$promise.then(function(data) {
+            $scope.franquias_usuarios = data;
+        });
     })
 
-    .controller('LoginController', function($scope,$location, Usuario,$rootScope) {
+    .controller('LoginController', function($scope,$location, Usuario,$rootScope,Franquia,Franquias_Usuarios) {
+        
         Usuario.query().$promise.then(function(data) {
             $scope.usuarios = data;
-            
+
             $scope.submit = function(){
                 data.forEach(function(x){
                     if($scope.nomeusuario == x.nome && $scope.senhausuario == x.senha){
                         sessionStorage.setItem("loggedIn", true);
+                        sessionStorage.setItem("userId", JSON.stringify(x.id));
                         $rootScope.loggedIn = sessionStorage.getItem("loggedIn");
                         if(x.admin == 1){
                             sessionStorage.setItem("admin", true);
@@ -35,8 +40,33 @@ franquia
 
             }
         }
-    )}
     )
+        Franquias_Usuarios.query().$promise.then(function(data) {
+            $scope.franquias_usuarios = data;
+            sessionStorage.setItem("franq_us", JSON.stringify(data));
+        })
+        Franquia.query().$promise.then(function(data) {
+            $scope.franquias = data;
+            sessionStorage.setItem("franquias", JSON.stringify(data));
+        });
+    })
+    .controller('Franquia_UsuariosController', function($scope, Franquia, Loja, Empregado,Usuario,Franquias_Usuarios,$rootScope) {
+        Usuario.query().$promise.then(function(data) {
+            $scope.usuarios = data;
+        })
+        Franquias_Usuarios.query().$promise.then(function(data) {
+            $scope.franquias_usuarios = data;
+            sessionStorage.setItem("franq_us", JSON.stringify(data));
+            $rootScope.franquias_usuarios = $scope.franquias_usuarios;
+
+        })
+        Franquia.query().$promise.then(function(data) {
+            $scope.franquias = data;
+            sessionStorage.setItem("franquias", JSON.stringify(data));
+        });
+        $scope.userId=sessionStorage.getItem("userId");
+
+    })
     
                     
 
