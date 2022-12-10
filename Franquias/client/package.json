@@ -11,7 +11,7 @@
   "homepage": "https://github.com/TrackMaven/getting-started-with-drf-angular/blob/master/README.md",
   "dependencies": {
     "bower": "1.7.9",
-    "express": "^4.13.4",
+    "express": "^4.17.3",
     "semantic-ui": "^2.4.2"
   }
 }
